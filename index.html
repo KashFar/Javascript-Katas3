@@ -41,8 +41,98 @@
     //Display 20 solid gray rectangles, each 20px high, with widths in pixels given by the 20 elements of sampleArray.
     //As in #21, but alternate colors so that every other rectangle is red.
     //As in #21, but color the rectangles with even widths red.
-             
+ 
+        /* console.log("Display the numbers from 1 to 5.");  
+    for (let counter = 1; counter <= 5; counter++) {
+        console.log(counter);
+    } */ 
 
+
+//Display the numbers from 1 to 20. (1, 2, 3, …,19, 20)
+    var numberArray=[];
+    
+    for(var i=1; i<=20;i++){
+        numberArray.push(i);
+    }
+    console.log(numberArray);
+
+//Display the even numbers from 1 to 20. (2, 4, 6, …, 18, 20)
+    var numberArray2=[];
+
+    for(var i=1; i<=20; i++) {
+        if ((i % 2) == 0) numberArray2.push(i);
+    }
+    console.log(numberArray2);
+
+//Display the odd numbers from 1 to 20. (1, 3, 5, …, 17, 19)
+var numberArray3=[];
+
+    for(var i=1; i<=20; i++) {
+        if ((i % 2) == 1) numberArray3.push(i);
+    }
+    console.log(numberArray3);
+
+//Display the multiples of 5 up to 100. (5, 10, 15, …, 95, 100)
+var numberArray4=[];
+
+    for(var i=1; i<=100; i++) {
+        if ((i % 5) == 0) numberArray4.push(i);
+    }
+    console.log(numberArray4);
+
+
+//Display the square numbers up to 100. (1, 4, 9, …, 81, 100)
+var numberArray5=[];
+
+    for(var i=1; i<=10; i++) {
+        numberArray5.push(i*i);
+    }
+    console.log(numberArray5);
+
+//Display the numbers counting backwards from 20 to 1. (20, 19, 18, …, 2, 1)
+var numberArray6=[];
+
+    for(var i=20; i>0; i--) {
+        numberArray6.push(i);
+    }
+    console.log(numberArray6);
+
+//Display the even numbers counting backwards from 20. (20, 18, 16, …, 4, 2)
+var numberArray7=[];
+
+    for(var i=20; i>0; i--) {
+        if ((i % 2) == 0) numberArray7.push(i);
+    }
+    console.log(numberArray7);
+
+//Display the odd numbers from 20 to 1, counting backwards. (19, 17, 15, …, 3, 1)
+var numberArray8=[];
+
+    for(var i=20; i>0; i--) {
+        if ((i % 2) == 1) numberArray8.push(i);
+    }
+    console.log(numberArray8);
+//Display the multiples of 5, counting down from 100. (100, 95, 90, …, 10, 5)
+var numberArray9=[];
+
+    for(var i=100; i>0; i--) {
+        if ((i % 5) == 0) numberArray9.push(i);
+    }
+    console.log(numberArray9);
+
+//Display the square numbers, counting down from 100. (100, 81, 64, …, 4, 1)
+
+var numberArray10=[];
+
+    for(var i=10; i>0; i--) {
+        numberArray10.push(i*i);
+    }
+    console.log(numberArray10);
+    
+    </script>
+    
+</body>
+</html>
 
     </script>
 </body>
