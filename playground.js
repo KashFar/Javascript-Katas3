@@ -154,9 +154,23 @@ createNewElement(textContent);
 createNewGreenHeadElement("Kata - 12 Display all the even numbers contained in sampleArray. (244, 758, 450, …, 940, 472)");
 textContent = "";
 
+for (let value of sampleArray){
+  if(value % 2 == 0 ){
+    textContent+= value + ' '
+  }
+}
+createNewElement(textContent);
+
 //Kata - 13 Display all the odd numbers contained in sampleArray. (469, 755, 245, …, 179, 535)
 createNewBlueHeadElement("Kata - 13 Display all the odd numbers contained in sampleArray. (469, 755, 245, …, 179, 535)");
 textContent = "";
+
+for (let value of sampleArray){
+  if(value % 2 == 1 ){
+    textContent+= value + ' '
+  }
+}
+createNewElement(textContent);
 
 //Kata - 14 Display the square of each element in sampleArray. (219961, 570025, …, 222784)
 createNewGreenHeadElement("Kata - 114 Display the square of each element in sampleArray. (219961, 570025, …, 222784)");
