@@ -60,37 +60,95 @@ createNewElement(textContent);
 createNewBlueHeadElement("Kata - 3 Display the odd numbers from 1 to 20. (1, 3, 5, …, 17, 19)");
 textContent = "";
 
+for(let i=1; i<=20; i++){
+  if ((i % 2) == 1) textContent = textContent + i + " ";
+}
+createNewElement(textContent);
+
 //Kata - 4 Display the multiples of 5 up to 100. (5, 10, 15, …, 95, 100)
 createNewGreenHeadElement("Kata - 4 Display the multiples of 5 up to 100. (5, 10, 15, …, 95, 100)");
 textContent = "";
 
+for(let i=1; i<=100; i++){
+  if ((i % 5) == 0) textContent = textContent + i + " ";
+}
+createNewElement(textContent);
+
 //Kata - 5 Display the square numbers from 1 up to 100. (1, 4, 9, …, 81, 100)
 createNewBlueHeadElement("Kata - 5 Display the square numbers from 1 up to 100. (1, 4, 9, …, 81, 100)");
-textContent = "";
+var numberArray5=[];
+
+    for(var i=1; i<=10; i++) {
+        numberArray5.push('' + i*i + ' ');
+    }
+
+    textContent = numberArray5
+  
+createNewElement(textContent);
 
 //Kata - 6 the numbers counting backwards from 20 to 1. (20, 19, 18, …, 2, 1)
 createNewGreenHeadElement("Kata - 6 the numbers counting backwards from 20 to 1. (20, 19, 18, …, 2, 1)");
-textContent = "";
+var numberArray7=[];
 
+for(var i=20; i>0; i--) {
+  numberArray7.push(i);
+}
+  
+textContent = numberArray7
+createNewElement(textContent);
 //Kata - 7 the even numbers counting backwards from 20 to 1. (20, 18, 16, …, 4, 2)
 createNewBlueHeadElement("Kata - 7 the even numbers counting backwards from 20 to 1. (20, 18, 16, …, 4, 2)");
-textContent = "";
+var numberArray7=[];
 
+    for(var i=20; i>0; i--) {
+        if ((i % 2) == 0) numberArray7.push(i);
+    }
+
+textContent = numberArray7
+createNewElement(textContent);
+    
 //Kata - 8 the odd numbers from 20 to 1, counting backwards. (19, 17, 15, …, 3, 1)
 createNewGreenHeadElement("Kata - 8 the odd numbers from 20 to 1, counting backwards. (19, 17, 15, …, 3, 1)");
-textContent = "";
+var numberArray8=[];
 
+    for(var i=20; i>0; i--) {
+        if ((i % 2) == 1) numberArray8.push(i);
+    }
+
+textContent = numberArray8
+createNewElement(textContent);
+    
 //Kata - 9 the multiples of 5, counting down from 100 to 1. (100, 95, 90, …, 10, 5)
 createNewBlueHeadElement("Kata - 9 the multiples of 5, counting down from 100 to 1. (100, 95, 90, …, 10, 5)");
-textContent = "";
+var numberArray9=[];
 
+    for(var i=100; i>0; i--) {
+        if ((i % 5) == 0) numberArray9.push(i);
+    }
+    textContent = numberArray9
+    createNewElement(textContent);
+    
 //Kata - 10 the square numbers, counting down from 100. (100, 81, 64, …, 4, 1)
 createNewGreenHeadElement("Kata - 10 the square numbers, counting down from 100. (100, 81, 64, …, 4, 1)");
-textContent = "";
+var numberArray10=[];
+
+    for(var i=10; i>0; i--) {
+        numberArray10.push(i*i);
+    }
+
+    textContent = numberArray10
+    createNewElement(textContent);
 
 //Kata - 11 Display the 20 elements of sampleArray. (469, 755, 244, …, 940, 472)
 createNewBlueHeadElement("Kata - 11 Display the 20 elements of sampleArray. (469, 755, 244, …, 940, 472)");
 textContent = "";
+
+for (let value of sampleArray){
+  textContent+= value + ' '
+  console.log(value)  // 11 , 21, 31
+}
+createNewElement(textContent);
+
 
 //Kata - 12 Display all the even numbers contained in sampleArray. (244, 758, 450, …, 940, 472)
 createNewGreenHeadElement("Kata - 12 Display all the even numbers contained in sampleArray. (244, 758, 450, …, 940, 472)");
@@ -214,9 +272,7 @@ function createNewDynamicElement(width){
   newElement.style.height = "20px";
   newElement.style.width = width + "px";
   }
-
-width = 100
-
+  
 for (let i=0; i < sampleArray.length; i++){
   width=(sampleArray[i])
   createNewDynamicElement(width)
@@ -237,7 +293,6 @@ function createNewDynamicGrayElement(width){
   }
 
   function createNewDynamicRedElement(width){
-    // Create a div, with class "bar", and set the width to 100px.
     let newElement = document.createElement('div');
     newElement.className="redbar";
     // Place a text label inside the new div.
