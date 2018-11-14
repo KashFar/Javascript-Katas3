@@ -3,16 +3,16 @@ let destination = document.getElementById("d1");
 let textContent = "";
 var linebreak = document.createElement("br")
 // destination.appendChild(linebreak); <- Use this for line breaks further into the document
- 
 
-function createNewElement(content){
-    // Create a div, with class "bar", and set the width to 100px.
-    var newElement = document.createElement('div');
-    newElement.className="indent";
-    // Place a text label inside the new div.
-    var newText = document.createTextNode(content);
-    newElement.appendChild(newText);
-    destination.appendChild(newElement);
+
+function createNewElement(content) {
+  // Create a div, with class "bar", and set the width to 100px.
+  var newElement = document.createElement('div');
+  newElement.className = "indent";
+  // Place a text label inside the new div.
+  var newText = document.createTextNode(content);
+  newElement.appendChild(newText);
+  destination.appendChild(newElement);
 
 }
 
@@ -35,12 +35,21 @@ function createNewGreenHeadElement(content){
   newElement.appendChild(newText);
   destination.appendChild(newElement);
 }
+function createNewHeadElement(content, style) {
+  // Create a div, with class "bar", and set the width to 100px.
+  var newElement = document.createElement('div');
+  newElement.className = style;
+  // Place a text label inside the new div.
+  var newText = document.createTextNode(content);
+  newElement.appendChild(newText);
+  destination.appendChild(newElement);
+}
 
 // Kata - 1 Display the numbers from 1 to 20. (1, 2, 3, …,19, 20)
-createNewBlueHeadElement("Kata - 1 Display the numbers from 1 to 20. (1, 2, 3, …,19, 20)");
-textContent = "";
+createNewHeadElement("Kata - 1 Display the numbers from 1 to 20. (1, 2, 3, …,19, 20)", 'bluebar');
+textContent = "";     //REFACTOR THIS SHIT WITH EXTRA PARAMETER USING THE NEWHEADELEMENT
 
-for(let i=1; i<=20; i++){
+for (let i = 1; i <= 20; i++) {
   textContent = textContent + i + " ";
 }
 createNewElement(textContent);;
@@ -51,7 +60,7 @@ createNewElement(textContent);;
 createNewGreenHeadElement("Kata - 2 Display the even numbers from 1 to 20. (2, 4, 6, …, 18, 20)");
 textContent = "";
 
-for(let i=1; i<=20; i++){
+for (let i = 1; i <= 20; i++) {
   if ((i % 2) == 0) textContent = textContent + i + " ";
 }
 createNewElement(textContent);
@@ -60,7 +69,7 @@ createNewElement(textContent);
 createNewBlueHeadElement("Kata - 3 Display the odd numbers from 1 to 20. (1, 3, 5, …, 17, 19)");
 textContent = "";
 
-for(let i=1; i<=20; i++){
+for (let i = 1; i <= 20; i++) {
   if ((i % 2) == 1) textContent = textContent + i + " ";
 }
 createNewElement(textContent);
@@ -69,94 +78,93 @@ createNewElement(textContent);
 createNewGreenHeadElement("Kata - 4 Display the multiples of 5 up to 100. (5, 10, 15, …, 95, 100)");
 textContent = "";
 
-for(let i=1; i<=100; i++){
+for (let i = 1; i <= 100; i++) {
   if ((i % 5) == 0) textContent = textContent + i + " ";
 }
 createNewElement(textContent);
 
 //Kata - 5 Display the square numbers from 1 up to 100. (1, 4, 9, …, 81, 100)
 createNewBlueHeadElement("Kata - 5 Display the square numbers from 1 up to 100. (1, 4, 9, …, 81, 100)");
-var numberArray5=[];
+var numberArray5 = [];
 
-    for(var i=1; i<=10; i++) {
-        numberArray5.push('' + i*i + ' ');
-    }
+for (var i = 1; i <= 10; i++) {
+  numberArray5.push('' + i * i + ' ');
+}
 
-    textContent = numberArray5
-  
+textContent = numberArray5
+
 createNewElement(textContent);
 
 //Kata - 6 the numbers counting backwards from 20 to 1. (20, 19, 18, …, 2, 1)
 createNewGreenHeadElement("Kata - 6 the numbers counting backwards from 20 to 1. (20, 19, 18, …, 2, 1)");
-var numberArray7=[];
+var numberArray7 = [];
 
-for(var i=20; i>0; i--) {
+for (var i = 20; i > 0; i--) {
   numberArray7.push(i);
 }
-  
+
 textContent = numberArray7
 createNewElement(textContent);
 //Kata - 7 the even numbers counting backwards from 20 to 1. (20, 18, 16, …, 4, 2)
 createNewBlueHeadElement("Kata - 7 the even numbers counting backwards from 20 to 1. (20, 18, 16, …, 4, 2)");
-var numberArray7=[];
+var numberArray7 = [];
 
-    for(var i=20; i>0; i--) {
-        if ((i % 2) == 0) numberArray7.push(i);
-    }
+for (var i = 20; i > 0; i--) {
+  if ((i % 2) == 0) numberArray7.push(i);
+}
 
 textContent = numberArray7
 createNewElement(textContent);
-    
+
 //Kata - 8 the odd numbers from 20 to 1, counting backwards. (19, 17, 15, …, 3, 1)
 createNewGreenHeadElement("Kata - 8 the odd numbers from 20 to 1, counting backwards. (19, 17, 15, …, 3, 1)");
-var numberArray8=[];
+var numberArray8 = [];
 
-    for(var i=20; i>0; i--) {
-        if ((i % 2) == 1) numberArray8.push(i);
-    }
+for (var i = 20; i > 0; i--) {
+  if ((i % 2) == 1) numberArray8.push(i);
+}
 
 textContent = numberArray8
 createNewElement(textContent);
-    
+
 //Kata - 9 the multiples of 5, counting down from 100 to 1. (100, 95, 90, …, 10, 5)
 createNewBlueHeadElement("Kata - 9 the multiples of 5, counting down from 100 to 1. (100, 95, 90, …, 10, 5)");
-var numberArray9=[];
+var numberArray9 = [];
 
-    for(var i=100; i>0; i--) {
-        if ((i % 5) == 0) numberArray9.push(i);
-    }
-    textContent = numberArray9
-    createNewElement(textContent);
-    
+for (var i = 100; i > 0; i--) {
+  if ((i % 5) == 0) numberArray9.push(i);
+}
+textContent = numberArray9
+createNewElement(textContent);
+
 //Kata - 10 the square numbers, counting down from 100. (100, 81, 64, …, 4, 1)
 createNewGreenHeadElement("Kata - 10 the square numbers, counting down from 100. (100, 81, 64, …, 4, 1)");
-var numberArray10=[];
+var numberArray10 = [];
 
-    for(var i=10; i>0; i--) {
-        numberArray10.push(i*i);
-    }
+for (var i = 10; i > 0; i--) {
+  numberArray10.push(i * i);
+}
 
-    textContent = numberArray10
-    createNewElement(textContent);
+textContent = numberArray10
+createNewElement(textContent);
 
 //Kata - 11 Display the 20 elements of sampleArray. (469, 755, 244, …, 940, 472)
 createNewBlueHeadElement("Kata - 11 Display the 20 elements of sampleArray. (469, 755, 244, …, 940, 472)");
 textContent = "";
 
-for (let value of sampleArray){
-  textContent+= value + ' '
+for (let value of sampleArray) {
+  textContent += value + ' '
   console.log(value)  // 11 , 21, 31
 }
 createNewElement(textContent);
-
 
 //Kata - 12 Display all the even numbers contained in sampleArray. (244, 758, 450, …, 940, 472)
 createNewGreenHeadElement("Kata - 12 Display all the even numbers contained in sampleArray. (244, 758, 450, …, 940, 472)");
 textContent = "";
 
-for (let value of sampleArray){
-  if(value % 2 == 0 ){
-    textContent+= value + ' '
+for (let value of sampleArray) {
+  if (value % 2 == 0) {
+    textContent += value + ' '
   }
 }
 createNewElement(textContent);
@@ -165,9 +173,9 @@ createNewElement(textContent);
 createNewBlueHeadElement("Kata - 13 Display all the odd numbers contained in sampleArray. (469, 755, 245, …, 179, 535)");
 textContent = "";
 
-for (let value of sampleArray){
-  if(value % 2 == 1 ){
-    textContent+= value + ' '
+for (let value of sampleArray) {
+  if (value % 2 == 1) {
+    textContent += value + ' '
   }
 }
 createNewElement(textContent);
@@ -177,8 +185,8 @@ createNewGreenHeadElement("Kata - 114 Display the square of each element in samp
 
 textContent = "";
 
-for (var i=0; i< sampleArray.length; i++){
-  textContent = textContent + sampleArray[i]*sampleArray[i] + " ";
+for (var i = 0; i < sampleArray.length; i++) {
+  textContent = textContent + sampleArray[i] * sampleArray[i] + " ";
 }
 createNewElement(textContent);
 
@@ -188,28 +196,28 @@ textContent = ""
 let total = 0
 let numberArray = [];
 
-for(var i = 1; i <= 20; i++){
-numberArray.push(i);
+for (var i = 1; i <= 20; i++) {
+  numberArray.push(i);
 }
 //createNewElement(numberArray);
-  // console.log(numberArray);
+// console.log(numberArray);
 
-for (var i = 0; i < numberArray.length; i++){
+for (var i = 0; i < numberArray.length; i++) {
   total += numberArray[i]
   // textContent += numberArray[i]
 }
 textContent = total
 createNewElement(textContent);
-  // createNewElement(total);
-    
+// createNewElement(total);
+
 //Kata - 16 Display the sum of all the elements in sampleArray.
 createNewGreenHeadElement("Kata - 16 Display the sum of all the elements in sampleArray.");
 
 textContent = "";
-total=0
+total = 0
 // let total = 0; THIS CAUSES AN ERROR WHY??
 
-for (let i = 0; i < sampleArray.length;i++){
+for (let i = 0; i < sampleArray.length; i++) {
   total += sampleArray[i]
   textContent = total;
 }
@@ -218,8 +226,8 @@ createNewElement(textContent); // can also do createNewElement(total)
 //Kata - 17 Display the smallest element in sampleArray.
 createNewBlueHeadElement("Kata - 17 Display the smallest element in sampleArray.");
 
-Array.min = function( sampleArray ){
-  return Math.min.apply( Math, sampleArray );
+Array.min = function (sampleArray) {
+  return Math.min.apply(Math, sampleArray);
 };
 
 let minimum = Array.min(sampleArray);
@@ -228,115 +236,115 @@ createNewElement(minimum);
 //Kata - 18 Display the largest element in sampleArray.
 createNewGreenHeadElement("Kata - 18 Display the largest element in sampleArray.");
 
-Array.max = function( sampleArray ){
-  return Math.max.apply( Math, sampleArray );
+Array.max = function (sampleArray) {
+  return Math.max.apply(Math, sampleArray);
 }
 let maximum = Array.max(sampleArray);
-createNewElement(maximum);  
+createNewElement(maximum);
 
 //Kata - 19 Display 20 solid gray rectangles, each 20px high and 100px wide.
 createNewBlueHeadElement("Kata - 19 Display 20 solid gray rectangles, each 20px high and 100px wide.");
 
-function createNewBarElement(width){
+function createNewBarElement(width) {
   // Create a div, with class "bar", and set the width to 100px.
   var newElement = document.createElement('div');
-  newElement.className="graybar";
+  newElement.className = "graybar";
   // Place a text label inside the new div.
   var newText = document.createTextNode(width);
   newElement.appendChild(newText);
   destination.appendChild(newElement);
-  
+
   newElement.style.width = "100px";
   newElement.style.height = "20px";
 }
-for(let i=0; i<=20; i++){
+for (let i = 0; i <= 20; i++) {
   createNewBarElement("");
 }
 
 //Kata - 20 Display 20 solid gray rectangles, each 20px high, with widths ranging evenly from 105px to 200px (remember #4, above).
 createNewGreenHeadElement("Kata - 20 Display 20 solid gray rectangles, each 20px high, with widths ranging evenly from 105px to 200px (remember #4, above).");
 
-function createNew5Element(width){
+function createNew5Element(width) {
   // Create a div, with class "bar", and set the width to 100px.
   let newElement = document.createElement('div');
-  newElement.className="graybar";
+  newElement.className = "graybar";
   // Place a text label inside the new div.
   destination.appendChild(newElement);
-  
+
   newElement.style.height = "20px";
   newElement.style.width = width + "px";
 }
 let width = 100
 
-for(let i=0; i<20; i++){
-  width+=5
+for (let i = 0; i < 20; i++) {
+  width += 5
   createNew5Element(width)
 }
 
 //Kata - 21 Display 20 solid gray rectangles, each 20px high, with widths in pixels given by the 20 elements of sampleArray.
 createNewBlueHeadElement("Kata - 21 Display 20 solid gray rectangles, each 20px high, with widths in pixels given by the 20 elements of sampleArray.");
 
-function createNewDynamicElement(width){
+function createNewDynamicElement(width) {
   // Create a div, with class "bar", and set the width to 100px.
   let newElement = document.createElement('div');
-  newElement.className="graybar";
+  newElement.className = "graybar";
   // Place a text label inside the new div.
   destination.appendChild(newElement);
-  
+
   newElement.style.height = "20px";
   newElement.style.width = width + "px";
-  }
-  
-for (let i=0; i < sampleArray.length; i++){
-  width=(sampleArray[i])
+}
+
+for (let i = 0; i < sampleArray.length; i++) {
+  width = (sampleArray[i])
   createNewDynamicElement(width)
 }
 
 //Kata - 22 As in #21, but alternate colors so that every other rectangle is red.
 createNewGreenHeadElement("Kata - 22 As in #21, but alternate colors so that every other rectangle is red.");
 
-function createNewDynamicGrayElement(width){
+function createNewDynamicGrayElement(width) {
   // Create a div, with class "bar", and set the width to 100px.
   let newElement = document.createElement('div');
-  newElement.className="graybar";
+  newElement.className = "graybar";
   // Place a text label inside the new div.
   destination.appendChild(newElement);
-  
+
   newElement.style.height = "20px";
   newElement.style.width = width + "px";
-  }
+}
 
-  function createNewDynamicRedElement(width){
-    let newElement = document.createElement('div');
-    newElement.className="redbar";
-    // Place a text label inside the new div.
-    destination.appendChild(newElement);
-    
-    newElement.style.height = "20px";
-    newElement.style.width = width + "px";
-    }
+function createNewDynamicRedElement(width) {
+  let newElement = document.createElement('div');
+  newElement.className = "redbar";
+  // Place a text label inside the new div.
+  destination.appendChild(newElement);
+
+  newElement.style.height = "20px";
+  newElement.style.width = width + "px";
+}
 
 width = 100
 
-for (let i=0; i < sampleArray.length; i++){
-  if (i % 2 == 0){
-    width=(sampleArray[i])
+for (let i = 0; i < sampleArray.length; i++) {
+  if (i % 2 == 0) {
+    width = (sampleArray[i])
     createNewDynamicGrayElement(width);
   }
-  else{
-    width=(sampleArray[i])
+  else {
+    width = (sampleArray[i])
     createNewDynamicRedElement(width);
   }
 }
 //Kata - 23 As in #21, but color the rectangles with even widths red.
 createNewBlueHeadElement("Kata - 23 As in #21, but color the rectangles with even widths red.");
 
-for (let i=0; i < sampleArray.length; i++){
-  width=(sampleArray[i]);
-  if (sampleArray[i] % 2 == 0){
+for (let i = 0; i < sampleArray.length; i++) {
+  width = (sampleArray[i]);
+  if (sampleArray[i] % 2 == 0) {
     createNewDynamicRedElement(width);
   }
-  else{
+  else {
     createNewDynamicGrayElement(width);
   }
 }
